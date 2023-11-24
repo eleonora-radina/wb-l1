@@ -1,0 +1,74 @@
+/* В фигурных скобках описаны CSS-свойства элемента в каждом ключевом кадре. Кейфремы при этом указывают в процентах. 
+Каждый кейфрейм задаёт положение объекта. Между этими положениями элемент и будет плавно перемещаться */
+@keyframes move {
+  0% {
+    left: 0;
+    top: 0;
+  }
+
+  25% {
+    left: 100px;
+    top: 100px;
+  }
+
+  50% {
+    left: 0;
+    top: 200px;
+  }
+
+  75% {
+    left: 100px;
+    top: 300px;
+  }
+
+  100% {
+    left: 0;
+    top: 400px;
+  }
+}
+
+html,
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+button {
+  border: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-enlarge {
+  margin-top: 25px;
+  background-color: #C5D0E6;
+  transition: all 2s;
+}
+
+.enlarge-animation {
+  transform: scale(1.5);
+}
+
+.button-container {
+  position: relative;
+  width: 300px;
+  text-align: center;
+}
+
+.button-move {
+  background-color: #FADADD;
+}
+
+.move-animation {
+  animation: move linear 5s;
+  position: absolute;
+}
