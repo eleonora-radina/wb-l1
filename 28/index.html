@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>To-do list</title>
+</head>
+
+<body>
+  <main class="main">
+    <h1 class="title">Мой список дел</h1>
+    <div class="input">
+      <input type="text" placeholder="Надо сделать...." class="input__text">
+      <button class="input__btn">
+        Добавить
+      </button>
+    </div>
+
+    <h2 class="container__title">Успеть сегодня:</h2>
+    <div class="container">
+      
+    </div>
+
+    <template id="task-template">
+      <div class="task">
+        <img src="./picture.png" class="task__img">
+        <p class="task__title"></p>
+      </div>
+    </template>
+  </main>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
