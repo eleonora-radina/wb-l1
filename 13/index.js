@@ -6,75 +6,62 @@
 
 // Базовый класс Shape (фигура)
 class Shape {
-  constructor(color) {
-    this.color = color;
+  constructor() {
+    this.name = "";
   }
 
   // Метод для расчета площади
-  getSquare() {
-    return undefined;
-  }
+  getSquare() {}
 
   // Метод для расчета периметра
-  getPerimeter() {
-    return undefined;
-  }
+  getPerimeter() {}
 }
 
-// Подкласс Rectangle расширяет базовый класс Shape
 class Rectangle extends Shape {
-  constructor(color, width, height) {
-    super(color);
+  constructor(width, height) {
+    super();
     this.width = width;
     this.height = height;
   }
 
-  // Переопределение метода для расчета площади прямоугольника
   getSquare() {
     return this.width * this.height;
   }
 
-  // Переопределение метода для расчета периметра прямоугольника
   getPerimeter() {
     return 2 * (this.width + this.height);
   }
 }
 
-// Подкласс Circle расширяет базовый класс Shape
 class Circle extends Shape {
-  constructor(color, R) {
-    super(color);
-    this.R = R;
+  constructor(rad) {
+    super();
+    this.rad = rad;
   }
 
-  // Переопределение метода для расчета площади круга
   getSquare() {
-    return Math.PI * this.R * this.R / 2;
+    return Math.PI * this.rad * this.rad / 2;
   }
 
-  // Переопределение метода для расчета длины окружности (периметр круга)
   getPerimeter() {
-    return 2 * Math.PI * this.R;
+    return 2 * Math.PI * this.rad;
   }
 }
 
-// Подкласс Triangle расширяет базовый класс Shape
 class Triangle extends Shape {
-  constructor(color, A, B, C) {
-    super(color);
+  constructor(A, B, C) {
+    super();
     this.A = A;
     this.B = B;
     this.C = C;
   }
 
-  // Переопределение метода для расчета площади треугольника
   getSquare() {
     // Формула Герона
     const s = (this.A + this.B + this.C) / 2;
     return Math.sqrt(s * (s - this.A) * (s - this.B) * (s - this.C));
   }
 
-  // Переопределение метода для расчета периметра треугольника
   getPerimeter() {
     return this.A + this.B + this.C;
   }
