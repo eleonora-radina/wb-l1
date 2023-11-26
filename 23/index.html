@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>Password Complexity Analyzer</title>
+</head>
+
+<body>
+  <main class="main">
+    <h1 class="title">Анализатор сложности пароля</h1>
+    <div class="container">
+    	<label for="password">Введите пароль:</label>
+    	<input type="text" name="password" required autocomplete="off" id="password">
+    	<button type="button" id="buttonCheck">Проверить</button>
+    </div>
+
+		<p class="rating"></p>
+		<div class="recommendation"></div>
+    
+  </main>
+
+  <script src="./index.js"></script>
+</body>
+</html>

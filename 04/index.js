@@ -48,11 +48,14 @@ var WordDeclension = (function () {
 })();
 
 // Пример использования:
+var numbers = [1, 12, 112, 121, 1024, 1026];
+var forms1 = ["сообщение", "сообщения", "сообщений"];
+var forms2 = ["пользователь", "пользователя", "пользователей"];
 
-console.log(WordDeclension.getWordDeclension(112, ["сообщение", "сообщения", "сообщений"]));
-console.log(WordDeclension.getWordDeclension(12, ["сообщение", "сообщения", "сообщений"]));
-console.log(WordDeclension.getWordDeclension(1, ["сообщение", "сообщения", "сообщений"]));
+numbers.forEach(number => {
+    console.log(WordDeclension.getWordDeclension(number, forms1));
+});
 
-console.log(WordDeclension.getWordDeclension(1024, ["пользователь", "пользователя", "пользователей"]));
-console.log(WordDeclension.getWordDeclension(1026, ["пользователь", "пользователя", "пользователей"]));
-console.log(WordDeclension.getWordDeclension(121, ["пользователь", "пользователя", "пользователей"]));
+numbers.forEach(number => {
+    console.log(WordDeclension.getWordDeclension(number, forms2));
+});
