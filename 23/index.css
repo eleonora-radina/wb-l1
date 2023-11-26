@@ -1,0 +1,42 @@
+html,
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 35px;
+  font-size: 32px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid grey;
+  height: 35px;
+}
+
+.recommendItem {
+  font-size: 14px;
+}
+
+.rating {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 25px;
+}

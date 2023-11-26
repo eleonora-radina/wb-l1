@@ -1,5 +1,5 @@
 /*Реализовать аналог библиотеки Math (можно назвать MathX) с базовым набором функций, используя замыкания:
-вычисление N-го числа в ряду Фибоначчи 
+вычисление N-го числа в ряду Фибоначчи
 вычисление всех чисел в ряду Фибоначчи до числа N
 вычисление N-го простого числа
 вычисление всех простых чисел до числа N
@@ -12,11 +12,13 @@
 
 var CustomMath = (function () {
   function fib(n) {
-    if (n <= 1) {
+    if (n <= 1)
       return n;
-    } else {
-      return fib(n - 2) + fib(n - 1);
-    }
+
+    if (n == 2)
+      return 1;
+
+    return fib(n - 2) + fib(n - 1);
   }
 
   function fibSeries(N) {
@@ -24,24 +26,30 @@ var CustomMath = (function () {
     for (var i = 0; i < N; i++) {
       series.push(fib(i));
     }
+
     return series;
   }
 
   function isPrime(num) {
-    if (num <= 1) return false;
+    if (num <= 1)
+        return false;
+
     for (var i = 2; i <= Math.sqrt(num); i++) {
-      if (num % i === 0) return false;
+      if (num % i === 0)
+        return false;
     }
+
     return true;
   }
 
   function primeSeries(N) {
     var series = [];
-    for (var i = 2; i <= N; i++) {
+    for (var i = 2; i < N; i++) {
       if (isPrime(i)) {
         series.push(i);
       }
     }
+
     return series;
   }
 
@@ -53,8 +61,8 @@ var CustomMath = (function () {
   };
 })();
 
-
-console.log(CustomMath.fib(5));
-console.log(CustomMath.fibSeries(8));
-console.log(CustomMath.primeSeries(4));
-console.log(CustomMath.primeSeries(20));
+let N = 5;
+console.log('Число Фибоначчи N=' + N +': '  + CustomMath.fib(N));
+console.log('Числа Фибоначчи до N=' + N + ': ' + CustomMath.fibSeries(N));
+console.log(N + (CustomMath.isPrime(N) ? ' - простое число' : ' - не простое число'));
+console.log('Простые числа до ' + N + ': ' + CustomMath.primeSeries(N));
