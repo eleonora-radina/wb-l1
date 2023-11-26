@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VK Widget with Memory Usage</title>
+  <style>
+    #widget {
+      width: 300px;
+      height: 400px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="widget"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const widget = document.getElementById('widget');
+
+  function getPosts(offset = 0) {
+    // ... (как в предыдущем примере)
+  }
+
+  function renderPosts(posts) {
+    posts.forEach(post => {
+      const postElement = document.createElement('div');
+      postElement.textContent = post.text;
+      widget.appendChild(postElement);
+    });
+  }
+
+  function calculateLocalStorageUsage() {
+    const currentStorageSize = JSON.stringify(localStorage).length;
+    const maxStorageSize = 5 * 1024 * 1024; // Предполагаемый лимит в 5 МБ для localStorage
+    const usagePercentage = (currentStorageSize / maxStorageSize) * 100;
+
+    console.log(`Memory Usage: ${currentStorageSize} bytes / ${maxStorageSize} bytes (${usagePercentage.toFixed(2)}%)`);
+  }
+
+  function saveDataToCache(posts) {
+    // ... (как в предыдущем примере)
+    calculateLocalStorageUsage();
+  }
+
+  function loadPostsAndRender(offset) {
+    // ... (как в предыдущем примере)
+    calculateLocalStorageUsage();
+  }
+
+  function handleScroll() {
+    // ... (как в предыдущем примере)
+    calculateLocalStorageUsage();
+  }
+
+  widget.addEventListener('scroll', handleScroll);
+
+  // При загрузке страницы загружаем кэшированные данные
+  loadCachedData();
+
+  // Загружаем первую порцию постов
+  loadPostsAndRender(0);
+});
+</script>
+
+</body>
+</html>
