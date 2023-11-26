@@ -15,3 +15,27 @@
 так что используйте его с осторожностью.
 
 */
+
+function getMaxLocalStorageSize() {
+    try {
+      // Создаем строку из 1 мегабайта
+      const oneMegabyteString = new Array(1024 * 1024 + 1).join('a');
+  
+      // Заполняем localStorage до тех пор, пока не выбросится исключение
+      let key = 'test';
+      let data = oneMegabyteString;
+      while (true) {
+        localStorage.setItem(key, data);
+        key += 'a';
+        data += oneMegabyteString;
+      }
+    } catch (e) {
+      // Ловим исключение и выводим объем данных, который удалось записать до возникновения ошибки
+      const maxSize = (key.length - 4) / 1024; // Преобразуем в килобайты
+      console.log(`Максимальный объем данных в localStorage: ${maxSize} KB`);
+    }
+  }
+  
+  // Вызываем функцию для подсчета максимального объема
+  getMaxLocalStorageSize();
+  

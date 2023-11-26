@@ -3,10 +3,10 @@
 Напишите методы для получения и изменения значений свойств книги.
 */
 
-let book = {
-  name: "Имя книги",
-  author: "Имя автора",
-  yearOfIssue: 2022,
+const book = {
+  title: 'Война и мир',
+  author: 'Лев Толстой',
+  yearOfIssue: 1873,
 
   getName: function () {
     return this.name;
@@ -30,7 +30,7 @@ let book = {
 
 // Пример использования методов
 console.log(book.getName());
-book.setName("Новое Имя Книги");
+book.setName("Новое Название Книги");
 console.log(book.getName());
 
 console.log(book.getAuthor());
@@ -40,3 +40,7 @@ console.log(book.getAuthor());
 console.log(book.getYearOfIssue());
 book.setYearOfIssue(2023);
 console.log(book.getYearOfIssue());
+
+console.log("Новое название книги:", book.getName());
+console.log("Новый автор книги:", book.getAuthor());
+console.log("Новый год издания:", book.getYearOfIssue());
